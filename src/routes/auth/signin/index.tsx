@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CgEye, CgEyeAlt } from "react-icons/cg";
+import { CgEye} from "react-icons/cg";
 import { FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
