@@ -1,11 +1,10 @@
-import { Email } from "./components/email/email";
-import { EmailOTP } from "./components/email/otp";
+
 import { BasicInformation } from "./components/basicinformation";
 import Successful from "./components/successful";
-import { Phone } from "./components/phone/phone";
-import { PhoneOTP } from "./components/phone/otp";
 
 import { useCallback, useMemo, useState } from "react";
+import { EnterPhone,ValidatePhone } from "./components/phone";
+import { EnterEmail, ValidateEmail } from "./components/email";
 
 export enum Esteps {
   phone,
@@ -35,13 +34,13 @@ export const SignUp = () => {
   const screen = useMemo(() => {
     switch (step) {
       case Esteps["phone"]:
-        return <Phone switcher={switchStep} />;
+        return <EnterPhone switcher={switchStep}/>;
       case Esteps["verifyphone"]:
-        return <PhoneOTP switcher={switchStep} />;
+        return <ValidatePhone switcher={switchStep} />;
       case Esteps["email"]:
-        return <Email switcher={switchStep} />;
+        return <EnterEmail switcher={switchStep} />;
       case Esteps["verifyemail"]:
-        return <EmailOTP switcher={switchStep} />;
+        return <ValidateEmail switcher={switchStep} />;
       case Esteps["basic"]:
         return <BasicInformation onSignedUp={onSignedUp} />;
       default:
