@@ -1,24 +1,21 @@
-import { forwardRef, LegacyRef, useEffect } from "react";
+import { useEffect } from "react";
 
-import PhoneInput, {
-  DefaultInputComponentProps,
-} from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { IProps } from "../../..";
 import { usePhoneReg } from "../../../../../../lib/formik/auth/actions/phone";
 
-const CustomInput = forwardRef(
-  (props: DefaultInputComponentProps, ref: LegacyRef<HTMLInputElement>) => (
-    <input
-      ref={ref}
-      type="text"
-      name="phone_number"
-      className="w-full py-[14.5px] pl-4 focus:outline-inherit outline-offset-0"
-      onChange={props.onChange}
-      placeholder="+234 9076308204"
-    />
-  )
-);
+// const CustomInput = forwardRef(
+//   (props: DefaultInputComponentProps, ref: LegacyRef<HTMLInputElement>) => (
+//     <input
+//       ref={ref}
+//       type="text"
+//       name="phone_number"
+//       className="w-full py-[12px] pl-4 focus:outline-inherit outline-offset-0"
+//       onChange={props.onChange}
+//       placeholder="+234 9076308204"
+//     />
+//   )
+// );
 
 export const EnterPhone = (props: IProps) => {
   const { switcher } = props;
@@ -42,7 +39,19 @@ export const EnterPhone = (props: IProps) => {
           <label className="font-[600] tracking-wide" htmlFor="username">
             Phone number:
           </label>
-          <PhoneInput
+          <input
+            type="text"
+            name="phone_number"
+            className={`w-full py-[12px] pl-4 border-slate-300 focus:outline-primary outline-offset-0 border rounded-md ${
+              errors.phone_number
+                ? "focus:outline-red-500"
+                : " focuse:outline-primary"
+            } `}
+            onChange={handleChange}
+            value={values.phone_number}
+            placeholder="+234 9076308204"
+          />
+          {/* <PhoneInput
             placeholder="Enter phone number"
             value={values.phone_number}
             onChange={(e) =>
@@ -55,9 +64,9 @@ export const EnterPhone = (props: IProps) => {
                 ? "border-red-500 a-red-500"
                 : "border-slate-300 outline-primary"
             }`}
-          />
+          /> */}
           {errors.phone_number ? (
-            <p className="text-red-500 pl-10 text-sm">{errors.phone_number}</p>
+            <p className="text-red-500  text-sm">{errors.phone_number}</p>
           ) : null}
         </div>
 
@@ -66,7 +75,7 @@ export const EnterPhone = (props: IProps) => {
             // onClick={() => switcher("verifyphone")}
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-primary hover:bg-blue-600 disabled:opacity-25 text-white font-semibold rounded-lg text-lg py-[13px] mt-3"
+            className="w-full bg-primary hover:bg-blue-600 disabled:opacity-25 text-white font-semibold rounded-lg text-lg py-[12px] mt-3"
           >
             Verify
           </button>

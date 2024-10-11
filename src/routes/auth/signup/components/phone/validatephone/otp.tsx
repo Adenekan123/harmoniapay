@@ -36,7 +36,7 @@ export const PhoneOTP = (props: IProps) => {
           )}
           inputStyle={{
             width: "100%",
-            height: 50,
+            height: 44,
             border: "1px solid #ddd",
             borderRadius: 4,
           }}
@@ -46,7 +46,7 @@ export const PhoneOTP = (props: IProps) => {
         <div>
           <button
             disabled={isSubmitting}
-            className="w-full bg-primary hover:bg-blue-600 text-white font-semibold rounded-lg text-lg py-[13px] mt-3 disabled:opacity-5"
+            className="w-full bg-primary hover:bg-blue-600 text-white font-semibold rounded-lg text-lg py-[12px] mt-3 disabled:opacity-5"
           >
             Verify
           </button>

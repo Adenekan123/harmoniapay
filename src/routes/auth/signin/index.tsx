@@ -21,7 +21,7 @@ export const Signin = () => {
           </label>
           <input
             type="text"
-            className="w-full py-[14.5px] px-6 border border-slate-300 rounded-lg focus:outline-primary"
+            className="w-full py-[12px] px-6 border border-slate-300 rounded-lg focus:outline-primary"
             // placeholder="Enter your username"
           />
         </div>
@@ -40,7 +40,7 @@ export const Signin = () => {
           <div className="relative">
             <input
               type={showPassword ? "text" : "password"}
-              className="w-full py-[14.5px] px-6 border border-slate-300 rounded-lg focus:outline-primary"
+              className="w-full py-[12px] px-6 border border-slate-300 rounded-lg focus:outline-primary"
               // placeholder="Enter your password"
             />
             <button
@@ -57,7 +57,7 @@ export const Signin = () => {
           </div>
         </div>
         <div>
-          <button className="w-full bg-primary hover:bg-blue-600 text-white font-semibold rounded-lg text-lg py-[14.5px] mt-3">
+          <button className="w-full bg-primary hover:bg-blue-600 text-white font-semibold rounded-lg text-lg py-[12px] mt-3">
             Sign In
           </button>
         </div>

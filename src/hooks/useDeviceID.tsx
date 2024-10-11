@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 
 function generateUniqueId() {
   const timestamp = Date.now().toString();
@@ -11,15 +11,16 @@ function generateUniqueId() {
 }
 
 export const useDeviceID = () => {
-  const deviceid = useRef<string | null>(localStorage.getItem("deviceID"));
+  // const deviceid = useRef<string | null>(localStorage.getItem("deviceID"));
+  const [deviceid, setDeviceid] = useState('');
 
   useEffect(() => {
-    if (!deviceid.current) {
+    if (!deviceid) {
       const newdeviceid = generateUniqueId();
-      deviceid.current = newdeviceid;
+     setDeviceid(newdeviceid);
       localStorage.setItem("deviceID", newdeviceid);
     }
   }, [deviceid]);
 
-  return deviceid.current as string;
+  return deviceid as string;
 };

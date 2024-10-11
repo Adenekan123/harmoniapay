@@ -5,8 +5,8 @@ import { toast } from "react-toastify";
 
 const initialValues: IVerifyEmail = {
   otp: "",
-  email:localStorage.getItem('authemail') as string,
-  identifier: localStorage.getItem('authidentifier') as string,
+  email:"",
+  identifier: "",
 };
 
 const validate = (values: IVerifyEmail) => {
@@ -21,12 +21,15 @@ const validate = (values: IVerifyEmail) => {
 };
 
 export const useVerifyEmail = () => {
+  const identifier = localStorage.getItem('authidentifier') as string
+  const email = localStorage.getItem('authemail') as string
+  console.log({identifier,email})
   return useFormik({
     initialValues,
     validate,
     onSubmit: async (values, formikhelpers) => {
       const response = await verifyemail(
-        values,
+        {...values,identifier,email},
         formikhelpers
       );
       if (response?.data?.identifier)

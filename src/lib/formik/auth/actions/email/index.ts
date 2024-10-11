@@ -5,7 +5,7 @@ import { IRegisterEmail } from "../../types";
 
 const initialValues: IRegisterEmail = {
   email: "",
-  identifier: localStorage.getItem("authidentifier") as string,
+  identifier: "",
 };
 
 const validate = (values: IRegisterEmail) => {
@@ -22,11 +22,12 @@ const validate = (values: IRegisterEmail) => {
 };
 
 export const useEmailReg = () => {
+const identifier = localStorage.getItem("authidentifier") as string;
   return useFormik({
     initialValues,
     validate,
     onSubmit: async (values, formikhelpers) => {
-      const response = await registeremail(values, formikhelpers);
+      const response = await registeremail({...values,identifier}, formikhelpers);
       if (response?.data?.error) toast.warning(response?.data.error);
     },
   });

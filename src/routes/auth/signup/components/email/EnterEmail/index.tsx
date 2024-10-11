@@ -13,6 +13,8 @@ export const EnterEmail = (props: IProps) => {
       switcher("verifyemail");
     }
   }, [switcher, status]);
+
+
   return (
     <>
       <p className="text-slate-600 mt-1 text-center">
@@ -33,7 +35,7 @@ export const EnterEmail = (props: IProps) => {
                 name="email"
                 value={values.email}
                 onChange={handleChange}
-                className="w-full py-[14.5px] px-6 border border-slate-300 rounded-lg focus:outline-primary"
+                className="w-full py-[12px] px-6 border border-slate-300 rounded-lg focus:outline-primary"
               />
               <div className="absolute right-1 top-1 h-[85%] grid items-center px-3 bg-white">
                 <MdOutlineEmail size={18} />
@@ -49,7 +51,7 @@ export const EnterEmail = (props: IProps) => {
           <button
             disabled={isSubmitting}
             type="submit"
-            className="w-full bg-primary hover:bg-blue-600 disabled:bg-opacity-25 text-white font-semibold rounded-lg text-lg py-[13px] mt-3"
+            className="w-full bg-primary hover:bg-blue-600 disabled:bg-opacity-25 text-white font-semibold rounded-lg text-lg py-[12px] mt-3"
           >
             Verify
           </button>
