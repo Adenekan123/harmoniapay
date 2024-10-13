@@ -4,19 +4,6 @@ import "react-phone-number-input/style.css";
 import { IProps } from "../../..";
 import { usePhoneReg } from "../../../../../../lib/formik/auth/actions/phone";
 
-// const CustomInput = forwardRef(
-//   (props: DefaultInputComponentProps, ref: LegacyRef<HTMLInputElement>) => (
-//     <input
-//       ref={ref}
-//       type="text"
-//       name="phone_number"
-//       className="w-full py-[12px] pl-4 focus:outline-inherit outline-offset-0"
-//       onChange={props.onChange}
-//       placeholder="+234 9076308204"
-//     />
-//   )
-// );
-
 export const EnterPhone = (props: IProps) => {
   const { switcher } = props;
   const { values, handleSubmit, handleChange, errors, isSubmitting, status } =
@@ -51,20 +38,7 @@ export const EnterPhone = (props: IProps) => {
             value={values.phone_number}
             placeholder="+234 9076308204"
           />
-          {/* <PhoneInput
-            placeholder="Enter phone number"
-            value={values.phone_number}
-            onChange={(e) =>
-              handleChange({ target: { value: e, name: "phone_number" } })
-            }
-            defaultCountry="NG"
-            inputComponent={CustomInput}
-            className={`bg-white border rounded-md pl-3 ${
-              errors.phone_number
-                ? "border-red-500 a-red-500"
-                : "border-slate-300 outline-primary"
-            }`}
-          /> */}
+
           {errors.phone_number ? (
             <p className="text-red-500  text-sm">{errors.phone_number}</p>
           ) : null}
@@ -72,10 +46,9 @@ export const EnterPhone = (props: IProps) => {
 
         <div>
           <button
-            // onClick={() => switcher("verifyphone")}
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-primary hover:bg-blue-600 disabled:opacity-25 text-white font-semibold rounded-lg text-lg py-[12px] mt-3"
+            className="w-full bg-primary hover:bg-gray-800 disabled:opacity-25 text-white font-semibold rounded-lg text-lg py-[12px] mt-3"
           >
             Verify
           </button>

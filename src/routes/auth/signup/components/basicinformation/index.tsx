@@ -205,9 +205,10 @@ export const BasicInformation = (props: IProps) => {
         </div>
         <div>
           <button
+        
           type="submit"
             disabled={isSubmitting}
-            className="w-full bg-primary hover:bg-blue-600 text-white font-semibold rounded-lg text-lg py-[12px] mt-3"
+            className="w-full bg-primary hover:bg-gray-800 disabled:opacity-25 text-white font-semibold rounded-lg text-lg py-[12px] mt-3"
           >
             Submit
           </button>

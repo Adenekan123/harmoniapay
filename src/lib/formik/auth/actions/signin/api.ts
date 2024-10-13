@@ -1,42 +1,37 @@
 import { FormikHelpers } from "formik";
-import { IRegisterPhone } from "../../types";
-import { AxiosInstance } from "../../../../axios/axios.instance";
+import { ISignin } from "../../types";
+import { AxiosInstance, setAxiosToken } from "../../../../axios/axios.instance";
 import { toast } from "react-toastify";
 import { AxiosError } from "axios";
 
 interface IResponse {
-  data: {
-    identifier: string;
-    error?:string
-  };
+  token: string;
   message?: string;
 }
 interface IErrorResponse {
-  errors: {[key:string]:string[]};
+  errors: { [key: string]: string[] };
   message: string;
   data?: {
     error: string;
-    code:number
+    code: number;
   };
 }
 
-export const registerphone = async (
-  values: { phone_number: string; device_id: string },
-  helpers: FormikHelpers<IRegisterPhone>
+export const signin = async (
+  values: { phone_number: string; password: string; device_id: string },
+  helpers: FormikHelpers<ISignin>
 ) => {
   helpers.setSubmitting(true);
   try {
-    const response = await AxiosInstance.post<IResponse>(
-      "/user/register",
-      values
-    );
+    const response = await AxiosInstance.post<IResponse>("/user/login", values);
     if (response.status === 200) {
+      setAxiosToken(response.data.token);
       if (response.data.message) toast.success(response.data.message);
+      helpers.setStatus(true);
     }
-    helpers.setStatus(true);
     return response.data;
   } catch (e) {
-    const error = e as AxiosError<IErrorResponse>
+    const error = e as AxiosError<IErrorResponse>;
     helpers.setStatus(false);
     toast.error(error.response?.data.message);
     toast.error(error.response?.data.data?.error);

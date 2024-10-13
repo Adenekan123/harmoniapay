@@ -46,7 +46,7 @@ export const EmailOTP = (props: IProps) => {
         <div>
           <button
             disabled={isSubmitting}
-            className="w-full bg-primary hover:bg-blue-600 text-white font-semibold rounded-lg text-lg py-[12px] mt-3 disabled:opacity-5"
+            className="w-full bg-primary hover:bg-gray-800 text-white font-semibold rounded-lg text-lg py-[12px] mt-3 disabled:opacity-5"
           >
             Verify
           </button>

@@ -1,20 +1,20 @@
 import { useEffect } from "react";
 
 import OtpInput from "react-otp-input";
-import { IProps } from "../../..";
-import { useVerifyPhone } from "../../../../../../lib/formik/auth/actions/verifyphone";
+import { useNavigate } from "react-router-dom";
+import { useVerify2fa } from "../../../../../lib/formik/auth/actions/verify2fa";
 
-export const PhoneOTP = (props: IProps) => {
-  const { switcher } = props;
+export const SigninOTP = () => {
+  const navigate = useNavigate();
 
   const { values, handleSubmit, handleChange, isSubmitting, status } =
-    useVerifyPhone();
+  useVerify2fa();
 
   useEffect(() => {
     if (status) {
-      switcher("email");
+      navigate('/dashboard')
     }
-  }, [switcher, status]);
+  }, [status,navigate]);
 
   return (
     <>

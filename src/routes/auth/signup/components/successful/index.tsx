@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-
 const Successful = () => {
   return (
     <div className="grid gap-6">
@@ -15,7 +14,10 @@ const Successful = () => {
       </div>
 
       <div>
-        <Link to="/" className="w-full bg-primary hover:bg-blue-600 block text-center text-white font-semibold rounded-lg text-lg py-[12px] mt-3">
+        <Link
+          to="/"
+          className="w-full bg-primary hover:bg-gray-800 block text-center text-white font-semibold rounded-lg text-lg py-[12px] mt-3"
+        >
           Sign in
         </Link>
       </div>

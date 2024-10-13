@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from "react";
 import { CountdownRenderProps } from "react-countdown";
 import { BiLoader } from "react-icons/bi";
-import CustomCountdown from "../../countdown";
+import CustomCountdown from "../../../../countdown";
 import { useResendVerifyPhone } from "../../../../../../lib/formik/auth/actions/resendphoneOTP";
 
 const OTPCountdown = () => {
@@ -40,7 +40,7 @@ const OTPCountdown = () => {
   useEffect(() => {
     console.log("restarting");
   }, []);
-  return <CustomCountdown seconds={4000} renderer={renderer} />;
+  return <CustomCountdown seconds={180000} renderer={renderer} />;
 };
 
 export default OTPCountdown;

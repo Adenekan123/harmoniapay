@@ -1,6 +1,8 @@
 import { FormikHelpers } from "formik";
 import { IRegisterEmail } from "../../types";
 import { AxiosInstance } from "../../../../axios/axios.instance";
+import { AxiosError } from "axios";
+import { toast } from "react-toastify";
 
 interface IResponse {
   data: {
@@ -8,10 +10,14 @@ interface IResponse {
     code: number;
   };
 }
-// interface IErrorResponse {
-//   errors: { identifier: string[] };
-//   message: string;
-// }
+interface IErrorResponse {
+  errors: { [key: string]: string[] };
+  message: string;
+  data?: {
+    error: string;
+    code: number;
+  };
+}
 
 export const registeremail = async (
   values: { email: string; identifier: string },
@@ -29,8 +35,10 @@ export const registeremail = async (
     }
     return response.data;
   } catch (e) {
+    const error = e as AxiosError<IErrorResponse>;
     helpers.setStatus(false);
-    console.log(e);
+    toast.error(error.response?.data.message);
+    toast.error(error.response?.data.data?.error);
   } finally {
     helpers.setSubmitting(false);
   }

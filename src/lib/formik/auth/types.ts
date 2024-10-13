@@ -23,3 +23,12 @@ export interface IResendVerifyEmail{
     identifier: string;
     email: string;
 }
+
+export interface ISignin{
+    phone_number: string;
+    password: string;
+    device_id: string;
+}
+export interface IVerify2fa{
+    otp: string;
+}

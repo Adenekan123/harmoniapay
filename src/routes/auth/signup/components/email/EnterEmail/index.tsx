@@ -51,7 +51,7 @@ export const EnterEmail = (props: IProps) => {
           <button
             disabled={isSubmitting}
             type="submit"
-            className="w-full bg-primary hover:bg-blue-600 disabled:bg-opacity-25 text-white font-semibold rounded-lg text-lg py-[12px] mt-3"
+            className="w-full bg-primary hover:bg-gray-800 disabled:bg-opacity-25 text-white font-semibold rounded-lg text-lg py-[12px] mt-3"
           >
             Verify
           </button>

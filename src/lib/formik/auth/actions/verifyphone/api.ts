@@ -1,6 +1,8 @@
 import { FormikHelpers } from "formik";
 import { AxiosInstance } from "../../../../axios/axios.instance";
-import {IVerifyPhone } from "../../types";
+import { IVerifyPhone } from "../../types";
+import { AxiosError } from "axios";
+import { toast } from "react-toastify";
 
 interface IResponse {
   data: {
@@ -8,11 +10,14 @@ interface IResponse {
   };
   message: string;
 }
-// interface IErrorResponse {
-//   errors: { identifier: string[] };
-//   message: string;
-// }
-
+interface IErrorResponse {
+  errors: { [key: string]: string[] };
+  message: string;
+  data?: {
+    error: string;
+    code: number;
+  };
+}
 
 export const verifyphone = async (
   values: IVerifyPhone,
@@ -27,8 +32,10 @@ export const verifyphone = async (
     helpers.setStatus(true);
     return response.data;
   } catch (e) {
+    const error = e as AxiosError<IErrorResponse>;
     helpers.setStatus(false);
-    console.log(e);
+    toast.error(error.response?.data.message);
+    toast.error(error.response?.data.data?.error);
   } finally {
     helpers.setSubmitting(false);
   }

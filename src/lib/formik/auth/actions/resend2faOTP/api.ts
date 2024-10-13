@@ -1,6 +1,4 @@
-import { FormikHelpers } from "formik";
 import { AxiosInstance } from "../../../../axios/axios.instance";
-import { IVerifyEmail } from "../../types";
 import { AxiosError } from "axios";
 import { toast } from "react-toastify";
 
@@ -19,24 +17,13 @@ interface IErrorResponse {
   };
 }
 
-export const verifyemail = async (
-  values: IVerifyEmail,
-  helpers: FormikHelpers<IVerifyEmail>
-) => {
-  helpers.setSubmitting(true);
+export const resend2fa = async () => {
   try {
-    const response = await AxiosInstance.post<IResponse>(
-      "/user/validate-email-otp",
-      values
-    );
-    helpers.setStatus(true);
+    const response = await AxiosInstance.get<IResponse>("/user/resend-2fa-otp");
     return response.data;
   } catch (e) {
     const error = e as AxiosError<IErrorResponse>;
-    helpers.setStatus(false);
     toast.error(error.response?.data.message);
     toast.error(error.response?.data.data?.error);
-  } finally {
-    helpers.setSubmitting(false);
   }
 };

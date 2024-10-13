@@ -1,15 +1,17 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { CountdownRenderProps } from "react-countdown";
 import { BiLoader } from "react-icons/bi";
-import CustomCountdown from "../../../../countdown";
-import { useResendVerifyPhone } from "../../../../../../lib/formik/auth/actions/resendphoneOTP";
+import CustomCountdown from "../../../countdown";
+import { useResend2FaOTP } from "../../../../../lib/swr/queriesAndMutations/auth";
 
 const OTPCountdown = () => {
-  const {
-    submitForm: resend,
-    isSubmitting: resending,
-    status: sent,
-  } = useResendVerifyPhone();
+  const { trigger, isMutating: resending } = useResend2FaOTP();
+  const [sent, setSent] = useState(false);
+
+  const handleResend = useCallback(async () => {
+    const response = await trigger();
+    if (response?.sent) setSent(true);
+  }, [trigger]);
 
   const renderer = useCallback(
     ({ minutes, seconds, completed, api }: CountdownRenderProps) => {
@@ -19,7 +21,7 @@ const OTPCountdown = () => {
           <button
             disabled={resending}
             className="bg-transparent text-primary font-semibold disabled:text-gray-400"
-            onClick={resend}
+            onClick={handleResend}
           >
             Resend OTP {resending && <BiLoader />}
           </button>
@@ -34,7 +36,7 @@ const OTPCountdown = () => {
         );
       }
     },
-    [resend, resending, sent]
+    [resending, sent, handleResend]
   );
 
   useEffect(() => {

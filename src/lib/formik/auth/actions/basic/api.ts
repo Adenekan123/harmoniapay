@@ -1,8 +1,23 @@
 import { FormikHelpers } from "formik";
 import { AxiosInstance } from "../../../../axios/axios.instance";
+import { toast } from "react-toastify";
+import { AxiosError } from "axios";
 
 interface IResponse {
+  message?: string;
+  errors?: {
+    [key: string]: string[];
+  };
   data: {
+    error: string;
+    code: number;
+  };
+}
+
+interface IErrorResponse {
+  errors: { [key: string]: string[] };
+  message: string;
+  data?: {
     error: string;
     code: number;
   };
@@ -27,13 +42,17 @@ export const registerbasicinfo = async (
       "/user/basic-detail",
       values
     );
-    if (response.data.data.code === 200) {
+    if (response.status === 200) {
+      if (response.data.message) toast.success(response.data.message);
       helpers.setStatus(true);
     }
+
     return response.data;
   } catch (e) {
+    const error = e as AxiosError<IErrorResponse>;
     helpers.setStatus(false);
-    console.log(e);
+    toast.error(error.response?.data.message);
+    toast.error(error.response?.data.data?.error);
   } finally {
     helpers.setSubmitting(false);
   }
