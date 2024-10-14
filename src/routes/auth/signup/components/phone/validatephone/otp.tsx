@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import OtpInput from "react-otp-input";
 import { IProps } from "../../..";
-import { useVerifyPhone } from "../../../../../../lib/formik/auth/actions/verifyphone";
+import { useVerifyPhone } from "../../../../../../lib/formik/auth/signup/verifyphone";
 
 export const PhoneOTP = (props: IProps) => {
   const { switcher } = props;

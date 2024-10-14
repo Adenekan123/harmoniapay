@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import OtpInput from "react-otp-input";
 import { IProps } from "../../..";
-import { useVerifyEmail } from "../../../../../../lib/formik/auth/actions/verifyemail";
+import { useVerifyEmail } from "../../../../../../lib/formik/auth/signup/verifyemail";
 
 export const EmailOTP = (props: IProps) => {
   const { switcher } = props;

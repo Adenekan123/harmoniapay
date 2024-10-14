@@ -1,6 +1,6 @@
 import { MdOutlineEmail } from "react-icons/md";
 import { IProps } from "../../..";
-import { useEmailReg } from "../../../../../../lib/formik/auth/actions/email";
+import { useEmailReg } from "../../../../../../lib/formik/auth/signup/email";
 import { useEffect } from "react";
 
 export const EnterEmail = (props: IProps) => {

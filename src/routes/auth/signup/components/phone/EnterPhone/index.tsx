@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import "react-phone-number-input/style.css";
 import { IProps } from "../../..";
-import { usePhoneReg } from "../../../../../../lib/formik/auth/actions/phone";
+import { usePhoneReg } from "../../../../../../lib/formik/auth/signup/phone";
 
 export const EnterPhone = (props: IProps) => {
   const { switcher } = props;

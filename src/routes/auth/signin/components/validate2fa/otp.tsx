@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import OtpInput from "react-otp-input";
 import { useNavigate } from "react-router-dom";
-import { useVerify2fa } from "../../../../../lib/formik/auth/actions/verify2fa";
+import { useVerify2fa } from "../../../../../lib/formik/auth/signin/verify2fa";
 
 export const SigninOTP = () => {
   const navigate = useNavigate();

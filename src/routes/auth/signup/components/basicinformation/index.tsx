@@ -5,7 +5,7 @@ import { FaEyeSlash } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import OTPInput from "react-otp-input";
 import ReactPasswordChecklist from "react-password-checklist";
-import { useBasicReg } from "../../../../../lib/formik/auth/actions/basic";
+import { useBasicReg } from "../../../../../lib/formik/auth/signup/basic";
 
 const messages = {
   minLength: "8 characters",

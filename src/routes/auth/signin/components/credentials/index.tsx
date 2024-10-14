@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { CgEye } from "react-icons/cg";
 import { FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useSignin } from "../../../../../lib/formik/auth/actions/signin";
 import { ISwitcherProps } from "../..";
+import { useSignin } from "../../../../../lib/formik/auth/signin";
 
 export const Credentials = (props:ISwitcherProps) => {
   const { switcher } = props;

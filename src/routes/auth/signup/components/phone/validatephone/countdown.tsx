@@ -2,7 +2,7 @@ import { useCallback, useEffect } from "react";
 import { CountdownRenderProps } from "react-countdown";
 import { BiLoader } from "react-icons/bi";
 import CustomCountdown from "../../../../countdown";
-import { useResendVerifyPhone } from "../../../../../../lib/formik/auth/actions/resendphoneOTP";
+import { useResendVerifyPhone } from "../../../../../../lib/formik/auth/signup/resendphoneOTP";
 
 const OTPCountdown = () => {
   const {
