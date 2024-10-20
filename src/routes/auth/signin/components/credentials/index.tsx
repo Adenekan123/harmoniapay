@@ -28,7 +28,7 @@ export const Credentials = (props:ISwitcherProps) => {
         className="grid gap-6 bg-white px-6 md:px-12 py-12 rounded-lg shadow-lg shadow-gray-200"
       >
         <div className="grid gap-2">
-          <label className="font-[600] tracking-wide" htmlFor="username">
+          <label className="font-[600] tracking-wide text-sm md:text-base" htmlFor="username">
             Phone number:
           </label>
           <input
@@ -45,11 +45,11 @@ export const Credentials = (props:ISwitcherProps) => {
         </div>
         <div className="grid gap-2">
           <div className="flex justify-between items-center">
-            <label className="font-[600] tracking-wider" htmlFor="username">
+            <label className="font-[600] tracking-wider text-sm md:text-base" htmlFor="username">
               Password:
             </label>
             <Link
-              className="font-[500] text-secondary text-[14px]"
+              className="font-[500] text-secondary text-xs md:text-[14px]"
               to={"/resetpassword"}
             >
               Forgot password?
@@ -83,13 +83,13 @@ export const Credentials = (props:ISwitcherProps) => {
         <div>
           <button
             disabled={isSubmitting}
-            className="w-full bg-primary hover:bg-gray-800 disabled:opacity-25 text-white font-semibold rounded-lg text-lg py-[12px] mt-3"
+            className="w-full bg-primary hover:bg-gray-800 disabled:opacity-25 text-white font-semibold rounded-lg text-md md:text-lg py-[12px] mt-3"
           >
             Sign In
           </button>
         </div>
       </form>
-      <div className="text-center font-semibold  tracking-wide">
+      <div className="text-center text-sm md:text-base font-semibold  tracking-wide">
         <Link to="/signup">
           Need an account?{" "}
           <span className="text-secondary">Create account</span>
