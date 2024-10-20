@@ -33,7 +33,7 @@ const Dashboard = () => {
         </div>
 
         <div className="overview grid gap-4">
-          <p className="text-md md:text-lg font-bold tracking-wide">
+          <p className="text-md md:text-lg font-[500] tracking-wide">
             Account Overview
           </p>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
@@ -46,19 +46,19 @@ const Dashboard = () => {
                       size={36}
                     />
                   </span>
-                  <p className=" text-sm md:text-md font-bold">
+                  <p className=" text-sm md:text-md font-[600]">
                     Account Balance
                   </p>
                 </div>
-                <p className="text-xs md:text-sm text-gray-400 max-w-60 leading-relaxed">
-                  Your Balance will appear here when you open USD account
+                <p className="text-xs md:text-sm text-gray-400 max-w-60" style={{lineHeight:1.7}}>
+                  Your balance will appear here when you open USD account
                 </p>
               </div>
 
               <div className="flex justify-between items-center">
                 <div>
                   <div className="flex gap-6 items-center">
-                    <p className="text-sm md:text-md font-bold">
+                    <p className="text-sm md:text-md font-[600]">
                       Create USD account
                     </p>
                     <span>
@@ -81,9 +81,9 @@ const Dashboard = () => {
                   <span className="w-[2.1rem] h-[2.1rem] rounded-full bg-green-700 text-white text-secondary flex justify-center items-center">
                     <BiTransferAlt className="text-white" size={24} />
                   </span>
-                  <p className="text-sm md:text-md font-bold">Exchange Rate</p>
+                  <p className="text-sm md:text-md font-[600]">Exchange Rate</p>
                 </div>
-                <p className="text-xs md:text-sm text-green-50 max-w-60 leading-relaxed">
+                <p className="text-xs md:text-sm text-green-50 max-w-60" style={{lineHeight:1.7}}>
                   Sometimes our rate changes in split seconds
                 </p>
               </div>
@@ -92,7 +92,7 @@ const Dashboard = () => {
                 <div>
                   <div className="flex gap-6 items-center">
                     <p
-                      className="text-md font-bold"
+                      className="text-md font-[600]"
                       style={{ fontFamily: "sans-serif" }}
                     >
                       $1 = 1506.00 NGN
@@ -115,7 +115,7 @@ const Dashboard = () => {
         </div>
 
         <div className="quick-actions grid gap-4 max-w-6xl mt-6">
-          <p className="text-md md:text-lg font-bold tracking-wide">
+          <p className="text-md md:text-lg font-[500] tracking-wide">
             Quick Actions
           </p>
           <div className="grid md:grid-cols-3 gap-6">
@@ -123,7 +123,7 @@ const Dashboard = () => {
               to={"/"}
               className="bg-black grid gap-2 px-5 py-6 md:px-8 rounded-lg"
             >
-              <p className="text-sm md:text-md text-white font-bold">
+              <p className="text-sm md:text-md text-white font-[600]">
                 Withdrawal
               </p>
               <div className="flex justify-between items-center gap-10">
@@ -139,7 +139,7 @@ const Dashboard = () => {
               to={"/"}
               className="bg-black grid gap-2 px-5 py-6 md:px-8 rounded-lg"
             >
-              <p className="text-sm md:text-md text-white font-bold">Convert</p>
+              <p className="text-sm md:text-md text-white font-[600]">Convert</p>
               <div className="flex justify-between items-center gap-10">
                 <p className="text-xs md:text-sm text-gray-400 max-w-60 leading-relaxed">
                   Convert currency to your local currency
@@ -153,7 +153,7 @@ const Dashboard = () => {
               to={"/"}
               className="bg-black grid gap-2 px-5 py-6 md:px-8 rounded-lg"
             >
-              <p className="text-sm md:text-md text-white font-bold">Earn</p>
+              <p className="text-sm md:text-md text-white font-[600]">Earn</p>
               <div className="flex justify-between items-center gap-10">
                 <p className="text-xs md:text-sm text-gray-400 max-w-60 leading-relaxed">
                   Get up to $200 by referring users
