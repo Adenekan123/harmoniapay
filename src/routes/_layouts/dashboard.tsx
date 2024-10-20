@@ -5,12 +5,12 @@ import MobileMenu from "./dashboard.mobile.menu";
 
 export const DashboardLayout = () => {
   return (
-    <div className="bg-bgBase grid grid-cols-12 h-screen">
+    <div className="grid grid-cols-12 h-screen">
       <aside className="lg:col-span-2 md:bg-black lg:py-6 fixed bottom-0 lg:relative w-full z-10 ">
         <Aside/>
         <MobileMenu/>
       </aside>
-      <main className=" col-span-12 lg:col-span-10 pb-24">
+      <main className="col-span-12 lg:col-span-10 pb-24 h-full">
         <div className="flex flex-col">
           <div className="h-[70px] bg-white px-5 md:px-24 shadow-sm flex justify-between items-center">
             <h2 className="font-semibold">Dashboard</h2>
@@ -19,7 +19,7 @@ export const DashboardLayout = () => {
               <TbUserSquareRounded  className="h-6 w-6 md:h-7 md:w-7" />
             </div>
           </div>
-          <div className="flex-1 bg-red px-5 md:px-24 py-6">
+          <div className="flex-1 bg-red px-5 md:px-24 py-6 h-[calc(100vh-70px)]">
             <Outlet />
           </div>
         </div>

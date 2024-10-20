@@ -78,3 +78,7 @@
     --color-white-shade:#EDF3FC;
   }
 }
+
+body{
+  background-color: var(--color-white-shade);
+}
