@@ -23,7 +23,7 @@ const MobileMenu = () => {
                 more
               </span>
             </PopoverButton>
-            <PopoverBackdrop className="fixed inset-0 bg-black/50" />
+            <PopoverBackdrop className="fixed inset-0 bg-black/50 z-50" />
             <PopoverPanel
               anchor={{ to: "top end", gap: "16px" }}
               className="flex flex-col bg-gray-950 border-2 border-gray-800 border-b-0 text-white rounded-tl-lg w-56 z-10"

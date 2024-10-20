@@ -12,7 +12,7 @@ export const DashboardLayout = () => {
       </aside>
       <main className="col-span-12 lg:col-span-10 pb-24 h-full">
         <div className="flex flex-col">
-          <div className="h-[70px] bg-white px-5 md:px-24 shadow-sm flex justify-between items-center fixed left-0 top-0 z-10 w-full">
+          <div className="h-[70px] bg-white px-5 md:px-24 shadow-sm flex justify-between items-center fixed z-[2] left-0 top-0 w-full">
             <h2 className="font-semibold">Dashboard</h2>
             <div className="flex gap-8 items-center">
               <TbBell className="h-6 w-6 md:h-7 md:w-7" />

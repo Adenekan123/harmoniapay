@@ -37,7 +37,7 @@ const Dashboard = () => {
             Account Overview
           </p>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
-            <div className="bg-black rounded-xl text-white relative grid gap-8 px-5 py-6 md:p-8 ">
+            <div className="bg-black rounded-xl text-white relative z-[1] grid gap-8 px-5 py-6 md:p-8 ">
               <div className="grid gap-3">
                 <div className="flex gap-6 items-center">
                   <span>
@@ -75,7 +75,7 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-green-500 rounded-xl text-white relative grid gap-8 px-5 py-6 md:p-8">
+            <div className="bg-green-500 rounded-xl text-white relative z[1] grid gap-8 px-5 py-6 md:p-8">
               <div className="grid gap-3">
                 <div className="flex gap-6 items-center">
                   <span className="w-[2.1rem] h-[2.1rem] rounded-full bg-green-700 text-white text-secondary flex justify-center items-center">
