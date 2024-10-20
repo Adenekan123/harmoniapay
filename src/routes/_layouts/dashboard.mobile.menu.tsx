@@ -14,12 +14,16 @@ const MobileMenu = () => {
   const menunavContent = useMemo(() => {
     return mobileNavs.map((nav, index) => {
       const { title, path, icon: Icon, sublist } = nav;
+      const currentpage = pathname.includes(path);
       if (sublist) {
         return (
           <Popover key={index + path} className="relative flex justify-center">
-            <PopoverButton as="button" className="flex flex-col gap-2 items-center outline-none">
+            <PopoverButton
+              as="button"
+              className="flex flex-col gap-2 items-center outline-none"
+            >
               <PiDotsThreeOutlineDuotone size={20} className="text-secondary" />
-              <span className="text-secondary group-hover:text-secondary text-[9px]">
+              <span className="text-secondarytint group-hover:text-secondary text-[9px]">
                 more
               </span>
             </PopoverButton>
@@ -41,13 +45,17 @@ const MobileMenu = () => {
                         <Subicon
                           size={18}
                           className={
-                            pathname.includes(path as string)
+                            currentpage
                               ? "text-secondary"
                               : "text-secondarytint group-hover:text-secondary"
                           }
                         />
                       </span>
-                      <span className="text-white group-hover:text-secondary text-xs">
+                      <span
+                        className={`${
+                          currentpage ? "text-secondary" : "text-white"
+                        } group-hover:text-secondary text-xs`}
+                      >
                         {title}
                       </span>
                     </span>
@@ -72,13 +80,17 @@ const MobileMenu = () => {
               <Icon
                 size={20}
                 className={
-                  pathname.includes(path as string)
+                  currentpage
                     ? "text-secondary"
                     : "text-secondarytint group-hover:text-secondary"
                 }
               />
             </span>
-            <span className="text-white group-hover:text-secondary text-[9px]">
+            <span
+              className={` ${
+                currentpage ? "text-secondary" : "text-white"
+              }  group-hover:text-secondary text-[9px]`}
+            >
               {title}
             </span>
           </Link>
