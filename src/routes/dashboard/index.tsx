@@ -26,7 +26,7 @@ const Dashboard = () => {
       </div>
 
       <div className="welcome grid gap-1">
-        <p className="tex-lg md:text-xl">
+        <p className="text-xl md:text-2xl">
           Welcome, <span className="font-bold">James Bond</span>
         </p>
         <p className="text-sm text-slate-500">Let work on your money.</p>
