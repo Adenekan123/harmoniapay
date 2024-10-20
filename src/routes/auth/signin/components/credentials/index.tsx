@@ -18,7 +18,7 @@ export const Credentials = (props:ISwitcherProps) => {
   return (
     <div className="grid gap-6">
       <div className="text-center grid gap-1">
-        <h2 className="text-3xl font-bold">Welcome Back</h2>
+        <h2 className="text-xl md:text-3xl font-bold">Welcome Back</h2>
         <p className="text-slate-600">
           Enter your credentials to access your account
         </p>
