@@ -21,7 +21,7 @@ export const sideNavs: ISideNavs[] = [
 ];
 
 export const mobileNavs: IMenuNavs[] = [
-  { title: "Dashboard", path: "/dashboard", icon: PiCirclesFourDuotone },
+  { title: "Home", path: "/dashboard", icon: PiCirclesFourDuotone },
   { title: "Cards", path: "/cards", icon: PiCreditCardDuotone },
   { title: "Accounts", path: "/accounts", icon: PiBankDuotone },
   { title: "Recipents", path: "/recipients", icon: PiUserListDuotone },

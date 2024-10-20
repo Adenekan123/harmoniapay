@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   return (
-    <div className="grid gap-9 pb-20">
+    <div className="grid gap-9">
       <div className="notifation border border-amber-300 bg-amber-100 text-black font-[500]  rounded-md px-4 md:px-6 py-3 flex gap-4 md:text-sm text-xs">
         <span>
           <PiInfo size={20} className="text-amber-500" />

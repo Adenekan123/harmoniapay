@@ -6,11 +6,11 @@ import MobileMenu from "./dashboard.mobile.menu";
 export const DashboardLayout = () => {
   return (
     <div className="bg-bgBase grid grid-cols-12 h-screen">
-      <aside className="lg:col-span-2 bg-black lg:py-6 fixed bottom-0 lg:relative w-full z-10">
+      <aside className="lg:col-span-2 md:bg-black lg:py-6 fixed bottom-0 lg:relative w-full z-10 ">
         <Aside/>
         <MobileMenu/>
       </aside>
-      <main className=" col-span-12 lg:col-span-10">
+      <main className=" col-span-12 lg:col-span-10 pb-24">
         <div className="flex flex-col">
           <div className="h-[70px] bg-white px-5 md:px-24 shadow-sm flex justify-between items-center">
             <h2 className="font-semibold">Dashboard</h2>
