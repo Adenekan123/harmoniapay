@@ -83,7 +83,7 @@ const MobileMenu = () => {
     });
   }, [pathname]);
   return (
-    <div className="grid grid-cols-5 gap-6 items-center justify-center lg:hidden px-4">
+    <div className="grid grid-cols-5 gap-6 items-center justify-center lg:hidden px-5">
       {menunavContent}
     </div>
   );
