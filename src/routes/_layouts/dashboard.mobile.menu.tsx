@@ -12,13 +12,16 @@ import { PiCaretRightBold, PiDotsThreeOutlineDuotone } from "react-icons/pi";
 const MobileMenu = () => {
   const { pathname } = useLocation();
   const menunavContent = useMemo(() => {
-    return mobileNavs.map((nav,index) => {
+    return mobileNavs.map((nav, index) => {
       const { title, path, icon: Icon, sublist } = nav;
       if (sublist) {
         return (
-          <Popover key={index+path} className="relative flex justify-end">
-            <PopoverButton as="button">
+          <Popover key={index + path} className="relative flex justify-end">
+            <PopoverButton as="button" className="flex flex-col gap-1 items-center">
               <PiDotsThreeOutlineDuotone size={20} className="text-secondary" />
+              <span className="text-secondary group-hover:text-secondary text-xs">
+                more
+              </span>
             </PopoverButton>
             <PopoverBackdrop className="fixed inset-0 bg-black/50" />
             <PopoverPanel
@@ -63,7 +66,7 @@ const MobileMenu = () => {
           <Link
             to={path as string}
             key={title}
-            className={`flex flex-col gap-1 items-center justify-center text-center py-4 px-8 group`}
+            className={`flex flex-col gap-1 items-center justify-center text-center py-4 group`}
           >
             <span>
               <Icon
