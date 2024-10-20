@@ -14,8 +14,9 @@
   
   
     --color-secondary:#FAB30A;
-    --color-secondary-shade:#00B871;
-    --color-secondary-tint:#36F46B;
+    --color-secondary-tint:#FFF7DE;
+    /* --color-secondary-shade:#00B871;
+    --color-secondary-tint:#36F46B; */
   
     --color-white:#fff;
     --color-white-shade:#EDF3FC;
@@ -47,13 +48,12 @@
     --color-primary:#000;
     --color-primary-shade:#000D60;
     --color-primary-tint:#CCD3FC;
-    --color-primary:#1D4ED8;
+    --color-primary:#000;
     --color-primary-shade:#000D60;
     --color-primary-tint:#CCD3FC;
   
   
     --color-secondary:#FAB30A;
-    --color-secondary-shade:#00B871;
     --color-secondary-tint:#FFF7DE;
   
     --color-white:#fff;
@@ -65,13 +65,12 @@
     --color-primary:#000;
     --color-primary-shade:#000D60;
     --color-primary-tint:#CCD3FC;
-    --color-primary:#1D4ED8;
+    --color-primary:#000;
     --color-primary-shade:#000D60;
     --color-primary-tint:#CCD3FC;
   
   
     --color-secondary:#FAB30A;
-    --color-secondary-shade:#00B871;
     --color-secondary-tint:#FFF7DE;
   
     --color-white:#fff;
