@@ -12,8 +12,8 @@ import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   return (
-    <div className="grid gap-9">
-      <div className="notifation border border-amber-300 bg-amber-100 text-black font-[500]  rounded-md px-4 md:px-6 py-3 flex gap-4 md:text-sm text-xs">
+    <>
+      <div className="notifation border border-amber-300 bg-amber-100 text-black font-[500]  rounded-md px-4 md:px-6 py-3 flex gap-4 md:text-sm text-xs mb-6">
         <span>
           <PiInfo size={20} className="text-amber-500" />
         </span>
@@ -24,142 +24,149 @@ const Dashboard = () => {
           </Link>
         </p>
       </div>
+      <div className="grid gap-9">
+        <div className="welcome grid gap-1">
+          <p className="text-xl md:text-2xl">
+            Welcome, <span className="font-bold">James Bond</span>
+          </p>
+          <p className="text-sm text-slate-500">Let work on your money.</p>
+        </div>
 
-      <div className="welcome grid gap-1">
-        <p className="text-xl md:text-2xl">
-          Welcome, <span className="font-bold">James Bond</span>
-        </p>
-        <p className="text-sm text-slate-500">Let work on your money.</p>
-      </div>
+        <div className="overview grid gap-4">
+          <p className="text-md md:text-lg font-bold tracking-wide">
+            Account Overview
+          </p>
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
+            <div className="bg-black rounded-xl text-white relative grid gap-8 px-5 py-6 md:p-8 ">
+              <div className="grid gap-3">
+                <div className="flex gap-6 items-center">
+                  <span>
+                    <PiCurrencyCircleDollarFill
+                      className="text-secondary"
+                      size={36}
+                    />
+                  </span>
+                  <p className=" text-sm md:text-md font-bold">
+                    Account Balance
+                  </p>
+                </div>
+                <p className="text-xs md:text-sm text-gray-400 max-w-60 leading-relaxed">
+                  Your Balance will appear here when you open USD account
+                </p>
+              </div>
 
-      <div className="overview grid gap-4">
-        <p className="text-md md:text-lg font-bold tracking-wide">
-          Account Overview
-        </p>
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
-          <div className="bg-black rounded-xl text-white relative grid gap-8 px-5 py-6 md:p-8 ">
-            <div className="grid gap-3">
-              <div className="flex gap-6 items-center">
-                <span>
-                  <PiCurrencyCircleDollarFill
-                    className="text-secondary"
-                    size={36}
+              <div className="flex justify-between items-center">
+                <div>
+                  <div className="flex gap-6 items-center">
+                    <p className="text-sm md:text-md font-bold">
+                      Create USD account
+                    </p>
+                    <span>
+                      <PiArrowRight className="text-secondary" size={24} />
+                    </span>
+                  </div>
+                </div>
+                <div className="absolute right-6 -bottom-6">
+                  <img
+                    src="/images/wallet.png"
+                    alt=""
+                    className="h-24 md:h-28"
                   />
-                </span>
-                <p className=" text-sm md:text-md font-bold">Account Balance</p>
-              </div>
-              <p className="text-xs md:text-sm text-gray-400 max-w-60 leading-relaxed">
-                Your Balance will appear here when you open USD account
-              </p>
-            </div>
-
-            <div className="flex justify-between items-center">
-              <div>
-                <div className="flex gap-6 items-center">
-                  <p className="text-sm md:text-md font-bold">
-                    Create USD account
-                  </p>
-                  <span>
-                    <PiArrowRight className="text-secondary" size={24} />
-                  </span>
                 </div>
               </div>
-              <div className="absolute right-6 -bottom-6">
-                <img src="/images/wallet.png" alt="" className="h-24 md:h-28" />
-              </div>
             </div>
-          </div>
-          <div className="bg-green-500 rounded-xl text-white relative grid gap-8 px-5 py-6 md:p-8">
-            <div className="grid gap-3">
-              <div className="flex gap-6 items-center">
-                <span className="w-[2.1rem] h-[2.1rem] rounded-full bg-green-700 text-white text-secondary flex justify-center items-center">
-                  <BiTransferAlt className="text-white" size={24} />
-                </span>
-                <p className="text-sm md:text-md font-bold">Exchange Rate</p>
-              </div>
-              <p className="text-xs md:text-sm text-green-50 max-w-60 leading-relaxed">
-                Sometimes our rate changes in split seconds
-              </p>
-            </div>
-
-            <div className="flex justify-between items-center">
-              <div>
+            <div className="bg-green-500 rounded-xl text-white relative grid gap-8 px-5 py-6 md:p-8">
+              <div className="grid gap-3">
                 <div className="flex gap-6 items-center">
-                  <p
-                    className="text-md font-bold"
-                    style={{ fontFamily: "sans-serif" }}
-                  >
-                    $1 = 1506.00 NGN
-                  </p>
-                  <span>
-                    <PiArrowRight className="text-white" size={24} />
+                  <span className="w-[2.1rem] h-[2.1rem] rounded-full bg-green-700 text-white text-secondary flex justify-center items-center">
+                    <BiTransferAlt className="text-white" size={24} />
                   </span>
+                  <p className="text-sm md:text-md font-bold">Exchange Rate</p>
                 </div>
+                <p className="text-xs md:text-sm text-green-50 max-w-60 leading-relaxed">
+                  Sometimes our rate changes in split seconds
+                </p>
               </div>
-              <div className="absolute right-6 -bottom-2">
-                <IoTrendingUpOutline
-                  scale={40}
-                  size={70}
-                  className="text-green-200"
-                />
+
+              <div className="flex justify-between items-center">
+                <div>
+                  <div className="flex gap-6 items-center">
+                    <p
+                      className="text-md font-bold"
+                      style={{ fontFamily: "sans-serif" }}
+                    >
+                      $1 = 1506.00 NGN
+                    </p>
+                    <span>
+                      <PiArrowRight className="text-white" size={24} />
+                    </span>
+                  </div>
+                </div>
+                <div className="absolute right-6 -bottom-2">
+                  <IoTrendingUpOutline
+                    scale={40}
+                    size={70}
+                    className="text-green-200"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="quick-actions grid gap-4 max-w-6xl mt-6">
-        <p className="text-md md:text-lg font-bold tracking-wide">
-          Quick Actions
-        </p>
-        <div className="grid md:grid-cols-3 gap-6">
-          <Link
-            to={"/"}
-            className="bg-black grid gap-2 px-5 py-6 md:px-8 rounded-lg"
-          >
-            <p className="text-sm md:text-md text-white font-bold">
-              Withdrawal
-            </p>
-            <div className="flex justify-between items-center gap-10">
-              <p className="text-xs md:text-sm text-gray-400 max-w-60 leading-relaxed">
-                Withdraw directly to your local Bank
+        <div className="quick-actions grid gap-4 max-w-6xl mt-6">
+          <p className="text-md md:text-lg font-bold tracking-wide">
+            Quick Actions
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link
+              to={"/"}
+              className="bg-black grid gap-2 px-5 py-6 md:px-8 rounded-lg"
+            >
+              <p className="text-sm md:text-md text-white font-bold">
+                Withdrawal
               </p>
-              <div className="relative -bottom-3">
-                <PiHandWithdrawDuotone className="text-secondary w-10 h-10 md:w-12 md:h-12" />
+              <div className="flex justify-between items-center gap-10">
+                <p className="text-xs md:text-sm text-gray-400 max-w-60 leading-relaxed">
+                  Withdraw directly to your local Bank
+                </p>
+                <div className="relative -bottom-3">
+                  <PiHandWithdrawDuotone className="text-secondary w-10 h-10 md:w-12 md:h-12" />
+                </div>
               </div>
-            </div>
-          </Link>
-          <Link
-            to={"/"}
-            className="bg-black grid gap-2 px-5 py-6 md:px-8 rounded-lg"
-          >
-            <p className="text-sm md:text-md text-white font-bold">Convert</p>
-            <div className="flex justify-between items-center gap-10">
-              <p className="text-xs md:text-sm text-gray-400 max-w-60 leading-relaxed">
-                Convert currency to your local currency
-              </p>
-              <div className="relative -bottom-3">
-                <PiCurrencyCircleDollarDuotone className="text-secondary w-10 h-10 md:w-12 md:h-12" />
+            </Link>
+            <Link
+              to={"/"}
+              className="bg-black grid gap-2 px-5 py-6 md:px-8 rounded-lg"
+            >
+              <p className="text-sm md:text-md text-white font-bold">Convert</p>
+              <div className="flex justify-between items-center gap-10">
+                <p className="text-xs md:text-sm text-gray-400 max-w-60 leading-relaxed">
+                  Convert currency to your local currency
+                </p>
+                <div className="relative -bottom-3">
+                  <PiCurrencyCircleDollarDuotone className="text-secondary w-10 h-10 md:w-12 md:h-12" />
+                </div>
               </div>
-            </div>
-          </Link>
-          <Link
-            to={"/"}
-            className="bg-black grid gap-2 px-5 py-6 md:px-8 rounded-lg"
-          >
-            <p className="text-sm md:text-md text-white font-bold">Earn</p>
-            <div className="flex justify-between items-center gap-10">
-              <p className="text-xs md:text-sm text-gray-400 max-w-60 leading-relaxed">
-                Get up to $200 by referring users
-              </p>
-              <div className="relative -bottom-3">
-                <PiPiggyBankDuotone className="text-secondary w-10 h-10 md:w-12 md:h-12" />
+            </Link>
+            <Link
+              to={"/"}
+              className="bg-black grid gap-2 px-5 py-6 md:px-8 rounded-lg"
+            >
+              <p className="text-sm md:text-md text-white font-bold">Earn</p>
+              <div className="flex justify-between items-center gap-10">
+                <p className="text-xs md:text-sm text-gray-400 max-w-60 leading-relaxed">
+                  Get up to $200 by referring users
+                </p>
+                <div className="relative -bottom-3">
+                  <PiPiggyBankDuotone className="text-secondary w-10 h-10 md:w-12 md:h-12" />
+                </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
