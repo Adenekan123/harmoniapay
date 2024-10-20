@@ -10,7 +10,11 @@ export default {
         bgBase: 'var(--color-white-shade)',
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
-      }
+        secondarytint: 'var(--color-secondary-tint)',
+      },
+      fontFamily: {
+        sans: ['Montserrat Alternates', 'Arial', 'sans-serif'],
+      },
     },
   },
   plugins: [],

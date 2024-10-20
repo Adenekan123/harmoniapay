@@ -4,7 +4,9 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import { AuthLayout, Signin, SignUp } from "./routes/auth";
+import { Signin, SignUp } from "./routes/auth";
+import { AuthLayout, DashboardLayout } from "./routes/_layouts";
+import Dashboard from "./routes/dashboard";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -12,6 +14,9 @@ const router = createBrowserRouter(
       <Route element={<AuthLayout />}>
         <Route index path="/" element={<Signin />} />
         <Route path="signup" element={<SignUp />} />
+      </Route>
+      <Route element={<DashboardLayout />}>
+        <Route path="/dashboard" element={<Dashboard />} />
       </Route>
     </>
   )
