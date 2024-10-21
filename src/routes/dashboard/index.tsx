@@ -33,7 +33,7 @@ const Dashboard = () => {
         </div>
 
         <div className="overview grid gap-4">
-          <p className="text-md md:text-lg font-[500] tracking-wide">
+          <p className="text-md md:text-lg font-[600] tracking-wide">
             Account Overview
           </p>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
@@ -115,7 +115,7 @@ const Dashboard = () => {
         </div>
 
         <div className="quick-actions grid gap-4 max-w-6xl mt-6">
-          <p className="text-md md:text-lg font-[500] tracking-wide">
+          <p className="text-md md:text-lg font-[600] tracking-wide">
             Quick Actions
           </p>
           <div className="grid md:grid-cols-3 gap-6">

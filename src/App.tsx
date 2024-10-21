@@ -7,6 +7,7 @@ import {
 import { Signin, SignUp } from "./routes/auth";
 import { AuthLayout, DashboardLayout } from "./routes/_layouts";
 import Dashboard from "./routes/dashboard";
+import Account from "./routes/accounts";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
       </Route>
       <Route element={<DashboardLayout />}>
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/accounts" element={<Account />} />
       </Route>
     </>
   )

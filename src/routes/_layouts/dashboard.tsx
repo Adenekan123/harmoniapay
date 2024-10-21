@@ -19,7 +19,7 @@ export const DashboardLayout = () => {
               <TbUserSquareRounded  className="h-6 w-6 md:h-7 md:w-7" />
             </div>
           </div>
-          <div className="flex-1 bg-red px-5 md:px-24 py-6 mt-[70px] h-[calc(100vh-70px)] overflow-hidden overflow-y-auto bg-bgBase">
+          <div className="flex-1 px-5 md:px-24 py-6 mt-[70px] h-[calc(100vh-70px)] overflow-hidden overflow-y-auto bg-bgBase">
             <Outlet />
           </div>
         </div>
