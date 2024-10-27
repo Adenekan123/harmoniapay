@@ -6,12 +6,12 @@ interface Iprops extends ButtonProps {
   text: string;
 }
 
-const CustomButton = (props: Iprops) => {
-  const { color = "bg-primary", text, className, ...rest } = props;
+export const CustomButton = (props: Iprops) => {
+  const { color = "bg-primary hover:bg-gray-800 text-white", text, className, ...rest } = props;
   const styles = useMemo(() => {
     return (
       className +
-      ` w-full ${color} hover:bg-gray-800 disabled:opacity-25 text-white font-semibold rounded-lg text-sm md:text-md py-[12px] mt-3`
+      ` w-full ${color} disabled:opacity-25  font-semibold rounded-lg text-sm md:text-md py-[12px] px-6 mt-3 tracking-wider`
     );
   }, [color, className]);
   return (
@@ -21,4 +21,3 @@ const CustomButton = (props: Iprops) => {
   );
 };
 
-export default CustomButton;
